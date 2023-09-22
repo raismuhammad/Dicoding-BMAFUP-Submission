@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie/model/model.dart';
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   final Movie movie;
 
   const DetailScreen({super.key, required this.movie});
 
+  @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,7 @@ class DetailScreen extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Image.network(movie.backdrop),
+                Image.network(widget.movie.backdrop),
                 Padding(
                   padding: EdgeInsets.only(top: 80, left: 20, right: 20),
                   child: Stack(alignment: Alignment.bottomLeft, children: [
@@ -34,14 +39,14 @@ class DetailScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              movie.title,
+                              widget.movie.title,
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(movie.rating, textAlign: TextAlign.left),
+                            Text(widget.movie.rating, textAlign: TextAlign.left),
                           ],
                         ),
                       ),
@@ -52,7 +57,7 @@ class DetailScreen extends StatelessWidget {
                           topRight: Radius.circular(10),
                           bottomLeft: Radius.circular(10)),
                       child: Image.network(
-                        movie.poster,
+                        widget.movie.poster,
                         height: 200,
                         width: 140,
                         fit: BoxFit.cover,
@@ -103,7 +108,7 @@ class DetailScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(movie.duration),
+                          Text(widget.movie.duration),
                         ],
                       ),
                       SizedBox(
@@ -118,7 +123,7 @@ class DetailScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(movie.releaseDate),
+                          Text(widget.movie.releaseDate),
                         ],
                       ),
                       SizedBox(
@@ -133,7 +138,7 @@ class DetailScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(movie.popularity),
+                          Text(widget.movie.popularity),
                         ],
                       ),
                     ],
@@ -163,7 +168,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        movie.overview,
+                        widget.movie.overview,
                         style: TextStyle(),
                         textAlign: TextAlign.justify,
                       )
@@ -178,7 +183,7 @@ class DetailScreen extends StatelessWidget {
                 height: 150,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: movie.casts.map((url) {
+                  children: widget.movie.casts.map((url) {
                     return Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: ClipRRect(
