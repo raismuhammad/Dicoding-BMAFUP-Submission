@@ -34,7 +34,7 @@ class DetailMobilePage extends StatelessWidget {
               children: <Widget>[
                 Stack(
                   children: <Widget>[
-                    Image.network(movie.backdrop),
+                    Image.asset(movie.backdrop),
                     Padding(
                       padding: EdgeInsets.only(top: 80, left: 20, right: 20),
                       child: Stack(alignment: Alignment.bottomLeft, children: [
@@ -69,7 +69,7 @@ class DetailMobilePage extends StatelessWidget {
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10),
                               bottomLeft: Radius.circular(10)),
-                          child: Image.network(
+                          child: Image.asset(
                             movie.poster,
                             height: 200,
                             width: 140,
@@ -109,52 +109,54 @@ class DetailMobilePage extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     child: Padding(
                       padding: EdgeInsets.all(22),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                "Duration",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                      child: Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Duration",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(movie.duration),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 18,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Release Date",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                Text(movie.duration),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  "Release Date",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(movie.releaseDate),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 18,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Popularity",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                Text(movie.releaseDate),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  "Popularity",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(movie.popularity),
-                            ],
-                          ),
-                        ],
+                                Text(movie.popularity),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

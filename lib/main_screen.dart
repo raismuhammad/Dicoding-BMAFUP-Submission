@@ -52,7 +52,7 @@ class MovieList extends StatelessWidget {
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10),
                           ),
-                          child: Image.network(movie.poster)),
+                          child: Image.asset(movie.poster)),
                     ),
                     Expanded(
                       flex: 4,
