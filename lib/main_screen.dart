@@ -7,6 +7,26 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth <= 600) {
+            return MovieList();
+          } else if (constraints.maxWidth <= 1200) {
+            return MovieListGrid(gridCount: 4);
+          } else {
+            return MovieListGrid(gridCount: 6);
+          }
+        },
+      ),);
+  }
+}
+
+class MovieList extends StatelessWidget {
+  const MovieList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
         final Movie movie = movieList[index];
@@ -53,12 +73,59 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-class MovieGrid extends StatelessWidget {
-  const MovieGrid({super.key});
+
+class MovieListGrid extends StatelessWidget {
+  final int gridCount;
+
+  const MovieListGrid({super.key, required this.gridCount});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: GridView.count(
+        crossAxisCount: gridCount,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        children: movieList.map((movie) {
+          return InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return DetailScreen(movie: movie);
+              }));
+            },
+            child: Card(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: Image.asset(
+                      movie.backdrop,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        movie.title,
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
   }
 }
 

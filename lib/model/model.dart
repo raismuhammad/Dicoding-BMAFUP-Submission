@@ -26,9 +26,9 @@ var movieList = [
   Movie(
     title: "Thor",
     poster:
-        "https://images-cdn.ubuy.co.id/634ef06b8baa0a022a1b1b31-thor-ragnarok-movie-poster-d-thor.jpg",
+    "images/thor-poster.webp",
     backdrop:
-        "https://c4.wallpaperflare.com/wallpaper/572/47/710/zipper-ragnarok-lightning-warrior-gladiator-hd-wallpaper-preview.jpg",
+    "images/thor-backdrop.webp",
     rating: "9.0",
     duration: "120min",
     releaseDate: "21 September 2023",
@@ -46,8 +46,8 @@ var movieList = [
   Movie(
     title: "Captain America",
     poster:
-        "https://images-cdn.ubuy.co.in/634cff8dee61a027615ddfa2-posters-usa-marvel-captain-america-the.jpg",
-    backdrop: "https://wallpapercave.com/wp/wp3775630.jpg",
+    "images/captain-america-poster.jpg",
+    backdrop: "images/captain-america-backdrop.jpg",
     rating: "9.0",
     duration: "120min",
     releaseDate: "21 September 2023",
@@ -64,8 +64,8 @@ var movieList = [
   Movie(
     title: "Avatar",
     poster:
-        "https://i.etsystatic.com/27725708/r/il/008c5a/2904647259/il_fullxfull.2904647259_ilg7.jpg",
-    backdrop: "https://wallpapercave.com/wp/wp9424755.jpg",
+    "images/avatar-poster.jpg",
+    backdrop: "images/avatar-backdrop.jpg",
     rating: "9.0",
     duration: "120min",
     releaseDate: "21 September 2023",
@@ -81,8 +81,8 @@ var movieList = [
   ),
   Movie(
     title: "Iron Man",
-    poster: "https://upload.wikimedia.org/wikipedia/id/7/70/Ironmanposter.JPG",
-    backdrop: "https://wallpapercave.com/wp/wp3405080.jpg",
+    poster: "images/iron-man-poster.jpg",
+    backdrop: "images/iron-man-backdrop.jpg",
     rating: "9.0",
     duration: "120min",
     releaseDate: "21 September 2023",
@@ -99,9 +99,9 @@ var movieList = [
   Movie(
     title: "Spider Man",
     poster:
-        "https://imgx.sonora.id/crop/0x0:0x0/x/photo/2021/11/08/fdo0mohvqaap5tdjpeg-20211108014100.jpeg",
+    "images/spiderman-poster.jpeg",
     backdrop:
-        "https://sportshub.cbsistatic.com/i/2023/08/01/04fff273-5d36-4c0f-b406-c0c5ca197414/one-piece-live-action-netflix-poster.jpg",
+    "images/spiderman-backdrop.jpg",
     rating: "9.0",
     duration: "120min",
     releaseDate: "21 September 2023",
